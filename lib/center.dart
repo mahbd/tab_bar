@@ -19,14 +19,16 @@ class _CenterTabState extends State<CenterTab> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 TopRowChild(
-                  text: "Roof",
+                  text: "Home",
                   icon: Icon(
-                    Icons.roofing,
+                    Icons.home,
                   ),
+                  bgColor: Colors.blue,
                 ),
                 TopRowChild(
                   text: "Roof",
                   icon: Icon(Icons.roofing),
+                  bgColor: Colors.pink,
                 ),
                 TopRowChild(
                   text: "Roof",
@@ -50,14 +52,17 @@ class _CenterTabState extends State<CenterTab> {
                 TopRowChild(
                   text: "Roof",
                   icon: Icon(Icons.room_rounded),
+                  bgColor: Colors.green,
                 ),
                 TopRowChild(
                   text: "Roof",
                   icon: Icon(Icons.roofing),
+                  bgColor: Colors.blue,
                 ),
                 TopRowChild(
                   text: "Roof",
                   icon: Icon(Icons.roofing),
+                  bgColor: Colors.pink,
                 ),
               ],
             ),

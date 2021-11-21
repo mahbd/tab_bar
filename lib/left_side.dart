@@ -6,16 +6,19 @@ class LeftTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      AnimatedTextKit(repeatForever: true, animatedTexts: [
-        TypewriterAnimatedText('This is left part',
-            textStyle: const TextStyle(fontSize: 30))
+    return Container(
+      color: Colors.black,
+      child: Column(children: [
+        AnimatedTextKit(repeatForever: true, animatedTexts: [
+          TypewriterAnimatedText('This is left part',
+              textStyle: const TextStyle(fontSize: 30))
+        ]),
+        const Image(
+          image: AssetImage('../assets/images/img_1.png'),
+          width: 200,
+          height: 200,
+        ),
       ]),
-      const Image(
-        image: AssetImage('../assets/images/img_1.png'),
-        width: 200,
-        height: 200,
-      ),
-    ]);
+    );
   }
 }

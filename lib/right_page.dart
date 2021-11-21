@@ -5,8 +5,12 @@ class RightTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image(
-      image: AssetImage('../assets/images/img_2.png'),
+    return Container(
+      color: Colors.black,
+      child: Image(
+        color: Colors.white,
+        image: AssetImage('../assets/images/img_2.png'),
+      ),
     );
   }
 }
