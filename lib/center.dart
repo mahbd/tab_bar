@@ -22,22 +22,32 @@ class _CenterTabState extends State<CenterTab> {
                   text: "Home",
                   icon: Icon(
                     Icons.home,
+                    color: Colors.black,
                   ),
                   bgColor: Colors.blue,
                 ),
                 TopRowChild(
                   text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  icon: Icon(
+                    Icons.roofing,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.pink,
                 ),
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  text: "Room",
+                  icon: Icon(
+                    Icons.room,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.blueGrey,
                 ),
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  text: "Email",
+                  icon: Icon(
+                    Icons.contact_mail,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),
@@ -45,23 +55,35 @@ class _CenterTabState extends State<CenterTab> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  text: "Map",
+                  icon: Icon(
+                    Icons.map,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.red,
                 ),
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.room_rounded),
+                  text: "Facebook",
+                  icon: Icon(
+                    Icons.facebook,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.green,
                 ),
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  text: "Golf",
+                  icon: Icon(
+                    Icons.golf_course,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.blue,
                 ),
                 TopRowChild(
-                  text: "Roof",
-                  icon: Icon(Icons.roofing),
+                  text: "Transfer",
+                  icon: Icon(
+                    Icons.transfer_within_a_station,
+                    color: Colors.black,
+                  ),
                   bgColor: Colors.pink,
                 ),
               ],
@@ -74,8 +96,8 @@ class _CenterTabState extends State<CenterTab> {
               width: MediaQuery.of(context).size.width,
               color: Colors.blue,
               margin: const EdgeInsets.all(5),
-              child: Column(children: [
-                const Padding(padding: EdgeInsets.only(top: 20)),
+              child: Column(children: const [
+                Padding(padding: EdgeInsets.only(top: 20)),
                 Text("Roof"),
                 Icon(Icons.roofing),
               ]),
@@ -100,16 +122,37 @@ class TopRowChild extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      width: 70,
-      margin: const EdgeInsets.all(5),
-      decoration: BoxDecoration(shape: BoxShape.circle, color: bgColor),
-      child: Column(children: [
-        const Padding(padding: EdgeInsets.only(top: 20)),
-        Text(text),
-        icon,
-      ]),
+    return TextButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => NavigatedPage(text: text)),
+        );
+      },
+      child: Container(
+        height: 80,
+        width: 70,
+        margin: const EdgeInsets.all(5),
+        decoration: BoxDecoration(shape: BoxShape.circle, color: bgColor),
+        child: Column(children: [
+          const Padding(padding: EdgeInsets.only(top: 20)),
+          Text(text, style: const TextStyle(color: Colors.black)),
+          icon,
+        ]),
+      ),
+    );
+  }
+}
+
+class NavigatedPage extends StatelessWidget {
+  const NavigatedPage({Key? key, required this.text}) : super(key: key);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child:
+          Text(text, style: const TextStyle(color: Colors.black, fontSize: 40)),
     );
   }
 }

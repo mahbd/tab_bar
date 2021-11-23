@@ -39,7 +39,7 @@ class _TabOpenerState extends State<TabOpener> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        bottom: const TabBar(
+        title: const TabBar(
           tabs: <Widget>[
             Tab(text: 'LEFT', icon: Icon(Icons.alarm)),
             Tab(text: 'CENTER', icon: Icon(Icons.ac_unit)),
